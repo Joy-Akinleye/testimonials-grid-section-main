@@ -122,6 +122,9 @@ body {
 /* Mobile responsiveness */
 /* 768px == 48rem */
 @media (max-width: 48rem) {
+    body {
+        font-size: 1.3rem;
+    }
     .grid-container {
         display: flex;
         flex-direction: column;
