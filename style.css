@@ -1,31 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     box-sizing: border-box;
     padding: 0;
 }
 
+:root {
+    --Purple50: hsl(260, 100%, 95%);
+    --Purple300: hsl(264, 82%, 80%);
+    --Purple500: hsl(263, 55%, 52%);
+    --White: hsl(0, 0%, 100%);
+    --Grey100: hsl(214, 17%, 92%);
+    --Grey200: hsl(0, 0%, 81%);
+    --Grey400: hsl(224, 10%, 45%);
+    --Grey500: hsl(217, 19%, 35%);
+    --Dark-blue: hsl(219, 29%, 14%);
+    --Black: hsl(0, 0%, 7%);
+}
+
+body {
+    /* height: 100vh; */
+    /* overflow: hidden; */
+    background-color: var(--Grey100);
+    font-size: 0.8125rem;
+    font-family: 'Barlow Semi Condensed', Arial, Helvetica, sans-serif;
+}
+
+.main {
+    margin-block-start: 2rem;
+    color: var(--White);
+}
+
 .grid-container {
     width: 80%;
     margin: 0 auto;
     display: grid;
-    gap: 2rem; /* row gap - 2rem, column gap - 2rem */
-    grid-template-columns: 1fr 1fr 1fr 1fr; /* The grid-template-columns property defines the number of columns in your grid layout, and it can define the width of each column. */
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
-.grid-item1 {
+.grid-card {
+    padding: 1rem;
+    border-radius: 0.875rem;
+    /* box-shadow: 0 4px 4px 4px rgba(239, 238, 240, 0.995); */
+}
+
+.item1 {
     grid-column: 1 / span 2;
     grid-row: 1 / span 1;
-    background-color: purple;
+    background-color: var(--Purple500);
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: right 2rem top 0.625rem;
 }
 
+.item2 {
+    background-color: var(--Grey500);
+}
 
+.item5 {
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 2;
+    color: var(--Grey500);
+    background-color: var(--White);
+}
 
+.item3 {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    color: var(--Grey500);
+    background-color: var(--White);
+}
+
+.item4 {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+    background-color: var(--Dark-blue);
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: row;
+    margin-block-start: 0.5rem;
+    margin-block-end: 1rem;
+}
+
+.profile-header img {
+    width: 2rem;
+    border-radius: 60%;
+    margin-inline-end: 1rem;
+}
+
+.header-style-two {
+    padding-block-start: 0.2rem;
+}
+
+.text-style-one {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.text-style-two {
+    margin-block-start: 1rem;
+}
 
 .attribution {
-    font-size: 11px;
+    position: relative;
+    font-size: 0.6875rem;
+    margin-block-start: 1rem;
     text-align: center;
+    color: var(--Black);
 }
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+/* Mobile responsiveness */
+/* 768px == 48rem */
+@media (max-width: 48rem) {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+    }
 }
